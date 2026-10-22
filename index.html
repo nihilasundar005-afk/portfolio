@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihila S.R. | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Nihila<span>.</span></h2>
+
+            <ul class="nav-links">
+    <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+    <li><a href="#about" class="nav-link" data-page="about">About</a></li>
+    <li><a href="#skills" class="nav-link" data-page="skills">Skills</a></li>
+    <li><a href="#projects" class="nav-link" data-page="projects">Projects</a></li>
+    <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+</ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero page-section active-page">
+        <div class="hero-content">
+            <p class="welcome">HELLO, WELCOME TO MY PORTFOLIO</p>
+            <h1>I'm <span>Nihila S.R.</span></h1>
+            <h3>Student | Aspiring Software Developer</h3>
+            <p>
+                I enjoy learning new technologies and creating
+                simple, useful, and innovative software solutions.
+            </p>
+            <a href="projects.html" class="btn">Explore My Projects</a>
+        </div>
+    </section>
+
+    <section id="about" class="section about-section page-section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+            <p>
+                I am Nihila S.R., a student passionate about programming
+                and technology. I am interested in web development,
+                artificial intelligence, and software applications.
+                My goal is to improve my technical skills by building
+                practical projects and solving real-world problems.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="section page-section">
+        <h2 class="section-title">My Skills</h2>
+
+        <div class="skills-container">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">Problem Solving</div>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects-section page-section">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <h3>Random Code Generator</h3>
+                <p>
+                    Generates random codes for simple identification
+                    and code-generation purposes.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Pay Roll Slip Generator</h3>
+                <p>
+                    Helps prepare salary slips using employee details,
+                    salary, and deduction information.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Library Book Borrowing, Return and Fine Calculation System</h3>
+                <p>
+                    Manages borrowed books, book returns, and
+                    overdue fine calculations.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>AI Powered Land Wind Matching Platform</h3>
+                <p>
+                    An AI-based project concept for matching land
+                    information with wind-related suitability data.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>AI Powered Smart College Resource Management System</h3>
+                <p>
+                    A smart management system concept for organizing
+                    and managing college resources efficiently.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section page-section">
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-card">
+            <p>Thank you for visiting my portfolio!</p>
+            <p>I'm always interested in learning and exploring new ideas.</p>
+
+            <form id="contact-form">
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    rows="4"
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+
+            <p id="form-message"></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Nihila S.R. | Personal Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
