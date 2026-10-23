@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nihila S.R. | Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #f6f7fb;
+    --white: #ffffff;
+    --text: #22253a;
+    --muted: #777c91;
+    --accent: #7258e8;
+    --light: #eeeaff;
+    --border: #e9eaf1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+}
+
+button, input {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* MAIN LAYOUT */
+
+.portfolio {
+    height: 100vh;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 235px minmax(0, 1fr);
+    overflow: hidden;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    padding: 32px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.logo {
+    font-family: 'Manrope', sans-serif;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0 0 45px 8px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.sidebar-caption {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #a2a4b3;
+    margin: 0 0 15px 12px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 46px;
+    padding: 0 13px;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.nav-btn span {
+    width: 22px;
+    font-size: 19px;
+    text-align: center;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: var(--light);
+    color: var(--accent);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 15px 5px 0;
+    border-top: 1px solid var(--border);
+    font-size: 10px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    display: inline-block;
+    border-radius: 50%;
+    background: #31b982;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    padding: 0 38px;
+    overflow: hidden;
+}
+
+.topbar {
+    min-height: 70px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.breadcrumb span {
+    margin: 0 8px;
+}
+
+.breadcrumb strong {
+    color: var(--text);
+}
+
+.top-github {
+    padding: 9px 14px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* CLICK NAVIGATION PAGES */
+
+.page {
+    display: none;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #d7d2f7 transparent;
+    animation: appear .2s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes appear {
+    from { opacity: .5; }
+    to { opacity: 1; }
+}
+
+#home {
+    overflow: hidden;
+}
+
+/* HOME */
+
+.home-layout {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(230px, .9fr);
+    align-items: center;
+    gap: 28px;
+    padding: 25px 0;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.intro-line {
+    color: var(--muted);
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.home-text h1,
+.section-heading h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(38px, 4vw, 59px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+    font-weight: 800;
+}
+
+.home-text h1 span,
+.section-heading h1 span {
+    color: var(--accent);
+}
+
+.home-text h2 {
+    margin-top: 17px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.description {
+    max-width: 460px;
+    margin-top: 13px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.primary-btn,
+.secondary-btn {
+    min-height: 41px;
+    padding: 0 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.primary-btn {
+    background: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+}
+
+.primary-btn:hover {
+    background: #5d43d1;
+}
+
+.secondary-btn {
+    background: white;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.home-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 27px;
+    padding-top: 17px;
+    border-top: 1px solid var(--border);
+}
+
+.home-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.detail-label {
+    color: #9699aa;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.home-details strong {
+    font-size: 10px;
+}
+
+/* PROFILE PHOTO */
+
+.profile-area {
+    width: 100%;
+    min-width: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.profile-decoration {
+    position: absolute;
+    z-index: 0;
+    width: 85%;
+    max-width: 340px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #e9e4ff;
+    right: 0;
+    top: 8%;
+}
+
+.profile-frame {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 315px);
+    aspect-ratio: 4 / 5;
+    padding: 8px;
+    border: 1px solid #e8e3ff;
+    background: white;
+    border-radius: 150px 150px 23px 23px;
+    box-shadow: 0 18px 50px rgba(66, 50, 130, .10);
+}
+
+.profile-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    background: #f1f0f4;
+    border-radius: 142px 142px 17px 17px;
+}
+
+.profile-tag {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 15px;
+    margin-top: -19px;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 9px;
+    box-shadow: 0 8px 25px rgba(30, 30, 60, .07);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* SECTION HEADING */
+
+.section-heading {
+    padding: 32px 0 23px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 9px;
+}
+
+.section-heading h1 {
+    font-size: clamp(34px, 3.5vw, 45px);
+}
+
+.section-heading > p:last-child {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* ABOUT */
+
+.about-card {
+    display: grid;
+    grid-template-columns: 75px minmax(0, 1fr);
+    align-items: start;
+    gap: 22px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: white;
+}
+
+.about-symbol {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: var(--light);
+    color: var(--accent);
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.about-card h2 {
+    margin: 3px 0 12px;
+    font-size: 19px;
+}
+
+.about-card p {
+    margin-bottom: 11px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+    margin: 16px 0 20px;
+}
+
+.info-card {
+    padding: 18px;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 11px;
+}
+
+.info-card > span {
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.info-card h3 {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.info-card p {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+    padding-bottom: 20px;
+}
+
+.skill-card {
+    padding: 19px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: .2s;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    border-color: #d5cdfb;
+}
+
+.skill-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.java-icon { color: #b64c36; background: #fff0e9; }
+.html-icon { color: #d96834; background: #fff0e8; }
+.css-icon { color: #347ac7; background: #eaf3ff; }
+.js-icon { color: #967300; background: #fff7cb; }
+.python-icon { color: #426da9; background: #edf2ff; }
+.git-icon { color: #9b4a32; background: #fff0e8; }
+
+.skill-card h3 {
+    font-size: 14px;
+}
+
+.skill-card p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.skill-tag {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 8px;
+    border-radius: 5px;
+    color: #6c57c9;
+    background: #f4f2ff;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+/* ONE JAVA PROJECT */
+
+.project-card {
+    display: grid;
+    grid-template-columns: minmax(200px, .78fr) minmax(0, 1.22fr);
+    overflow: hidden;
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: white;
+}
+
+.project-banner {
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 21px;
+    color: white;
+    background:
+        radial-gradient(circle at 80% 45%, #4d438d 0, transparent 42%),
+        linear-gradient(145deg, #252444, #17172f);
+}
+
+.project-banner-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.project-category {
+    padding: 7px 9px;
+    border-radius: 5px;
+    background: rgba(255,255,255,.12);
+    font-size: 9px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.project-number {
+    color: #b8b5da;
+    font-size: 9px;
+}
+
+.book-illustration {
+    position: relative;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book {
+    position: absolute;
+    width: 115px;
+    height: 160px;
+    border-radius: 4px 9px 9px 4px;
+    box-shadow: 8px 12px 20px rgba(0,0,0,.24);
+}
+
+.book-back {
+    background: #d3b1ed;
+    transform: translate(28px, -5px) rotate(12deg);
+}
+
+.book-middle {
+    background: #a2b6f5;
+    transform: translate(-25px, -2px) rotate(-11deg);
+}
+
+.book-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    padding: 12px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(145deg, #8d77ef, #5743bd);
+    border-left: 5px solid #c0b3ff;
+    transform: rotate(-2deg);
+}
+
+.book-front span {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.book-front strong {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.book-front small {
+    color: #e2dcff;
+    font-size: 8px;
+}
+
+.banner-caption {
+    color: #d9d5f0;
+    font-size: 11px;
+}
+
+.project-content {
+    min-width: 0;
+    padding: 24px;
+}
+
+.project-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.project-kicker {
+    color: var(--accent);
+    font-size: 9px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.project-title-row h2 {
+    margin-top: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+.java-badge {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    background: #fff0e9;
+    color: #b64c36;
+    border-radius: 8px;
+    font-weight: 800;
+}
+
+.project-description {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.project-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 14px;
+}
+
+.project-features span {
+    padding: 7px 9px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: #65677c;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+/* GITHUB LINK */
+
+.repository-box {
+    margin-top: 21px;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fafaff;
+}
+
+.repository-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.repository-icon {
+    width: 33px;
+    height: 33px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: var(--light);
+    color: var(--accent);
+    font-size: 18px;
+}
+
+.repository-heading h3 {
+    font-size: 12px;
+}
+
+.repository-heading p {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.repository-url {
+    display: block;
+    margin: 13px 0;
+    color: #6350c9;
+    font-size: 11px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.view-project-btn {
+    width: 100%;
+}
+
+.edit-repository {
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid var(--border);
+}
+
+.edit-repository summary {
+    list-style: none;
+    cursor: pointer;
+    color: #6350c9;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.edit-repository summary::-webkit-details-marker {
+    display: none;
+}
+
+.edit-repository form {
+    margin-top: 15px;
+}
+
+.edit-repository label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.edit-repository input {
+    width: 100%;
+    min-height: 41px;
+    padding: 10px;
+    border: 1px solid #dedfea;
+    border-radius: 7px;
+    background: white;
+    color: var(--text);
+    outline: none;
+    font-size: 11px;
+}
+
+.edit-repository input:focus {
+    border-color: var(--accent);
+}
+
+.repository-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 11px;
+}
+
+.link-message {
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* CONTACT */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 22px;
+    padding-bottom: 25px;
+}
+
+.contact-intro {
+    padding: 24px;
+    color: white;
+    background: linear-gradient(145deg, #51419b, #7761df);
+    border-radius: 13px;
+}
+
+.contact-intro h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 23px;
+    line-height: 1.5;
+}
+
+.contact-intro > p {
+    margin-top: 12px;
+    color: #e6e1ff;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.contact-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(255,255,255,.12);
+    font-size: 10px;
+}
+
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.contact-card {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+}
+
+.contact-card:hover {
+    border-color: #cfc6ff;
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: var(--light);
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.contact-card > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-card small {
+    display: block;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.contact-card strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.contact-arrow {
+    color: var(--accent);
+}
+
+/* FOOTER */
+
+.footer {
+    min-height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.footer span {
+    color: #e86e9a;
+}
+
+/* TABLET AND MOBILE RESPONSIVE */
+
+@media (max-width: 1050px) {
+    .portfolio {
+        grid-template-columns: 195px minmax(0, 1fr);
+    }
+
+    .sidebar {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .main-content {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .home-layout {
+        gap: 18px;
+        grid-template-columns: minmax(0, 1fr) minmax(190px, .8fr);
+    }
+
+    .profile-frame {
+        width: min(100%, 280px);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-content {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 760px) {
+    .portfolio {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(0, 1fr);
+    }
+
+    .sidebar {
+        padding: 9px 12px 10px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+        font-size: 23px;
+        margin: 0 0 8px 3px;
+    }
+
+    .sidebar-caption,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .navigation {
+        flex-direction: row;
+        gap: 5px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-btn {
+        flex: 1 0 auto;
+        width: auto;
+        min-height: 38px;
+        padding: 0 10px;
+        justify-content: center;
+        gap: 5px;
+        font-size: 11px;
+    }
+
+    .nav-btn span {
+        width: auto;
+        font-size: 15px;
+    }
+
+    .main-content {
+        padding: 0 17px;
+    }
+
+    .topbar {
+        min-height: 51px;
+    }
+
+    .home-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 26px 0;
+    }
+
+    .home-text h1 {
+        font-size: clamp(40px, 10vw, 56px);
+    }
+
+    .home-text h2 {
+        font-size: 15px;
+    }
+
+    .profile-area {
+        padding: 15px 0 25px;
+    }
+
+    .profile-frame {
+        width: min(75%, 270px);
+    }
+
+    .profile-decoration {
+        width: 70%;
+        right: 5%;
+    }
+
+    .section-heading {
+        padding: 25px 0 19px;
+    }
+
+    .about-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .about-symbol {
+        width: 55px;
+        height: 55px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-banner {
+        min-height: 290px;
+    }
+
+    .book-illustration {
+        height: 155px;
+    }
+
+    .book {
+        width: 100px;
+        height: 135px;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .footer {
+        min-height: 42px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 380px) {
+    .main-content {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    .nav-btn {
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    .nav-btn span {
+        display: none;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-buttons {
+        gap: 7px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        padding: 0 11px;
+        font-size: 10px;
+    }
+}
+
+@media (max-height: 650px) and (min-width: 761px) {
+    .sidebar {
+        padding-top: 18px;
+    }
+
+    .logo {
+        margin-bottom: 25px;
+    }
+
+    .home-layout {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .profile-frame {
+        width: min(100%, 235px);
+    }
+
+    .home-details {
+        margin-top: 15px;
+        padding-top: 11px;
+    }
+
+    .section-heading {
+        padding-top: 18px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="portfolio">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a href="#" class="logo" id="home-logo">
+            Nihila<span>.</span>
+        </a>
+
+        <p class="sidebar-caption">MY PORTFOLIO</p>
+
+        <nav class="navigation" aria-label="Main navigation">
+
+            <button class="nav-btn active" data-page="home">
+                <span>⌂</span> Home
+            </button>
+
+            <button class="nav-btn" data-page="about">
+                <span>○</span> About
+            </button>
+
+            <button class="nav-btn" data-page="skills">
+                <span>◇</span> Skills
+            </button>
+
+            <button class="nav-btn" data-page="projects">
+                <span>▣</span> Projects
+            </button>
+
+            <button class="nav-btn" data-page="contact">
+                <span>✉</span> Contact
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <span class="status-dot"></span>
+            Available for opportunities
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <p class="breadcrumb">
+                Portfolio <span>/</span>
+                <strong id="current-page">Home</strong>
+            </p>
+
+            <a
+                class="top-github"
+                href="https://github.com/nihilasundar005-afk"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub ↗
+            </a>
+
+        </header>
+
+        <!-- HOME PAGE -->
+
+        <section class="page active" id="home">
+
+            <div class="home-layout">
+
+                <div class="home-text">
+
+                    <p class="eyebrow">
+                        WELCOME TO MY PORTFOLIO
+                    </p>
+
+                    <p class="intro-line">Hello, I'm</p>
+
+                    <h1>Nihila <span>S.R.</span></h1>
+
+                    <h2>B.Sc. Information Technology Student</h2>
+
+                    <p class="description">
+                        I am an IT student passionate about programming,
+                        learning new technologies, and building useful
+                        software projects. I enjoy turning ideas into
+                        simple and practical solutions.
+                    </p>
+
+                    <div class="home-buttons">
+
+                        <button class="primary-btn" data-go="projects">
+                            Explore My Project ↗
+                        </button>
+
+                        <button class="secondary-btn" data-go="contact">
+                            Contact Me
+                        </button>
+
+                    </div>
+
+                    <div class="home-details">
+
+                        <div>
+                            <span class="detail-label">EDUCATION</span>
+                            <strong>B.Sc. Information Technology</strong>
+                        </div>
+
+                        <div>
+                            <span class="detail-label">FOCUS</span>
+                            <strong>Java & Web Development</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- YOUR PROFILE PHOTO -->
+
+                <div class="profile-area">
+
+                    <div class="profile-decoration"></div>
+
+                    <div class="profile-frame">
+
+                        <img
+                            src="profile.jpeg"
+                            alt="Nihila S.R. profile photo"
+                            class="profile-photo"
+                        >
+
+                    </div>
+
+                    <div class="profile-tag">
+                        <span class="status-dot"></span>
+                        Aspiring IT Professional
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ABOUT PAGE -->
+
+        <section class="page" id="about">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">GET TO KNOW ME</p>
+
+                <h1>About <span>Me</span></h1>
+
+                <p>
+                    A little introduction about my academic journey
+                    and interests.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <div class="about-symbol">N.</div>
+
+                <div>
+
+                    <h2>Hello! I'm Nihila.</h2>
+
+                    <p>
+                        I am pursuing B.Sc. Information Technology.
+                        I am interested in computer programming,
+                        software development, and learning technologies
+                        that solve real-world problems.
+                    </p>
+
+                    <p>
+                        I have worked on a Java-based Library Book
+                        Borrowing project. Through this project,
+                        I am developing my programming, logical-thinking,
+                        and problem-solving skills.
+                    </p>
+
+                    <p>
+                        My goal is to improve my technical knowledge,
+                        gain practical experience, and grow as an
+                        IT professional.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <span>01</span>
+                    <h3>Education</h3>
+                    <p>B.Sc. Information Technology</p>
+                </div>
+
+                <div class="info-card">
+                    <span>02</span>
+                    <h3>Interest</h3>
+                    <p>Programming and technology</p>
+                </div>
+
+                <div class="info-card">
+                    <span>03</span>
+                    <h3>Goal</h3>
+                    <p>Build practical software solutions</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SKILLS PAGE -->
+
+        <section class="page" id="skills">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">WHAT I WORK WITH</p>
+
+                <h1>My <span>Skills</span></h1>
+
+                <p>
+                    Technologies and skills I am learning
+                    and developing.
+                </p>
+
+            </div>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <div class="skill-icon java-icon">J</div>
+                    <h3>Java</h3>
+                    <p>Object-oriented programming and basic application development.</p>
+                    <span class="skill-tag">Programming</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon html-icon">H</div>
+                    <h3>HTML</h3>
+                    <p>Creating structured web pages using HTML elements.</p>
+                    <span class="skill-tag">Web</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon css-icon">C</div>
+                    <h3>CSS</h3>
+                    <p>Styling web pages with layouts, colors, and responsive design.</p>
+                    <span class="skill-tag">Web</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon js-icon">JS</div>
+                    <h3>JavaScript</h3>
+                    <p>Adding interactive features to web pages.</p>
+                    <span class="skill-tag">Web</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon python-icon">Py</div>
+                    <h3>Python</h3>
+                    <p>Learning programming fundamentals and problem-solving.</p>
+                    <span class="skill-tag">Programming</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon git-icon">G</div>
+                    <h3>Git & GitHub</h3>
+                    <p>Managing code and showcasing projects in repositories.</p>
+                    <span class="skill-tag">Tools</span>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- PROJECTS PAGE: ONLY ONE JAVA PROJECT -->
+
+        <section class="page" id="projects">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">MY WORK</p>
+
+                <h1>Featured <span>Project</span></h1>
+
+                <p>My Java project and its source code.</p>
+
+            </div>
+
+            <article class="project-card">
+
+                <div class="project-banner">
+
+                    <div class="project-banner-top">
+
+                        <span class="project-category">JAVA PROJECT</span>
+
+                        <span class="project-number">PROJECT 01</span>
+
+                    </div>
+
+                    <div class="book-illustration" aria-hidden="true">
+
+                        <div class="book book-back"></div>
+
+                        <div class="book book-middle"></div>
+
+                        <div class="book book-front">
+                            <span>LIBRARY</span>
+                            <strong>BOOK<br>BORROWING</strong>
+                            <small>JAVA PROJECT</small>
+                        </div>
+
+                    </div>
+
+                    <div class="banner-caption">
+                        Library Book Borrowing System
+                    </div>
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-title-row">
+
+                        <div>
+                            <p class="project-kicker">
+                                JAVA · APPLICATION DEVELOPMENT
+                            </p>
+
+                            <h2>Library Book Borrowing System</h2>
+                        </div>
+
+                        <div class="java-badge">J</div>
+
+                    </div>
+
+                    <p class="project-description">
+                        A Java-based project focused on library book
+                        borrowing operations. The project demonstrates
+                        programming logic and application development
+                        for library-related tasks.
+                    </p>
+
+                    <div class="project-features">
+                        <span>Java</span>
+                        <span>Programming Logic</span>
+                        <span>Library System</span>
+                    </div>
+
+                    <!-- GITHUB REPOSITORY -->
+
+                    <div class="repository-box">
+
+                        <div class="repository-heading">
+
+                            <span class="repository-icon">⌘</span>
+
+                            <div>
+                                <h3>GitHub Repository</h3>
+                                <p>View the project source code</p>
+                            </div>
+
+                        </div>
+
+                        <a
+                            id="repository-link"
+                            class="repository-url"
+                            href="https://github.com/nihilasundar005-afk/Library-Book-Borrowing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            github.com/nihilasundar005-afk/Library-Book-Borrowing
+                        </a>
+
+                        <a
+                            id="view-project"
+                            class="primary-btn view-project-btn"
+                            href="https://github.com/nihilasundar005-afk/Library-Book-Borrowing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View on GitHub ↗
+                        </a>
+
+                    </div>
+
+                    <!-- CHANGE REPOSITORY URL -->
+
+                    <details class="edit-repository">
+
+                        <summary>
+                            ＋ Update GitHub Repository Link
+                        </summary>
+
+                        <form id="repository-form">
+
+                            <label for="github-url">
+                                Paste your GitHub repository URL
+                            </label>
+
+                            <input
+                                type="url"
+                                id="github-url"
+                                placeholder="https://github.com/username/repository"
+                                required
+                            >
+
+                            <div class="repository-actions">
+
+                                <button type="submit" class="primary-btn">
+                                    Update Link
+                                </button>
+
+                                <button type="button" id="reset-link" class="secondary-btn">
+                                    Reset
+                                </button>
+
+                            </div>
+
+                            <p id="link-message" class="link-message" aria-live="polite"></p>
+
+                        </form>
+
+                    </details>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- CONTACT PAGE -->
+
+        <section class="page" id="contact">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">LET'S CONNECT</p>
+
+                <h1>Contact <span>Me</span></h1>
+
+                <p>
+                    Feel free to reach out for opportunities
+                    and professional connections.
+                </p>
+
+            </div>
+
+            <div class="contact-layout">
+
+                <div class="contact-intro">
+
+                    <h2>Let's start a conversation.</h2>
+
+                    <p>
+                        I am interested in learning, collaborating,
+                        and exploring opportunities in the IT field.
+                    </p>
+
+                    <div class="contact-note">
+                        <span class="status-dot"></span>
+                        Open to learning opportunities
+                    </div>
+
+                </div>
+
+                <div class="contact-cards">
+
+                    <a class="contact-card" href="mailto:nihilasundar005@gmail.com">
+
+                        <span class="contact-icon">@</span>
+
+                        <div>
+                            <small>EMAIL</small>
+                            <strong>nihilasundar005@gmail.com</strong>
+                        </div>
+
+                        <span class="contact-arrow">↗</span>
+
+                    </a>
+
+                    <a
+                        class="contact-card"
+                        href="https://github.com/nihilasundar005-afk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span class="contact-icon">⌘</span>
+
+                        <div>
+                            <small>GITHUB</small>
+                            <strong>View My GitHub Profile</strong>
+                        </div>
+
+                        <span class="contact-arrow">↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <p>© <span id="year"></span> Nihila S.R.</p>
+
+            <p>Designed with care <span>♥</span></p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+"use strict";
+
+/* NAVIGATION */
+
+const pages = document.querySelectorAll(".page");
+const navButtons = document.querySelectorAll(".nav-btn");
+const currentPageLabel = document.getElementById("current-page");
+
+function showPage(pageId) {
+    const targetPage = document.getElementById(pageId);
+
+    if (!targetPage) return;
+
+    pages.forEach((page) => {
+        page.classList.toggle("active", page.id === pageId);
+    });
+
+    navButtons.forEach((button) => {
+        const active = button.dataset.page === pageId;
+
+        button.classList.toggle("active", active);
+
+        if (active) {
+            button.setAttribute("aria-current", "page");
+        } else {
+            button.removeAttribute("aria-current");
+        }
+    });
+
+    currentPageLabel.textContent =
+        pageId.charAt(0).toUpperCase() + pageId.slice(1);
+
+    targetPage.scrollTop = 0;
+}
+
+/* SIDEBAR BUTTONS */
+
+navButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        showPage(button.dataset.page);
+    });
+});
+
+/* HOME PAGE SHORTCUTS */
+
+document.querySelectorAll("[data-go]").forEach((button) => {
+    button.addEventListener("click", () => {
+        showPage(button.dataset.go);
+    });
+});
+
+/* LOGO RETURNS HOME */
+
+document.getElementById("home-logo").addEventListener("click", (event) => {
+    event.preventDefault();
+    showPage("home");
+});
+
+/* GITHUB REPOSITORY LINK */
+
+const defaultRepository =
+    "https://github.com/nihilasundar005-afk/Library-Book-Borrowing";
+
+const repositoryForm = document.getElementById("repository-form");
+const repositoryInput = document.getElementById("github-url");
+const repositoryLink = document.getElementById("repository-link");
+const viewProjectButton = document.getElementById("view-project");
+const linkMessage = document.getElementById("link-message");
+const resetLinkButton = document.getElementById("reset-link");
+
+/* VALIDATE GITHUB URL */
+
+function isValidGitHubRepository(value) {
+    try {
+        const url = new URL(value);
+
+        if (
+            url.protocol !== "https:" ||
+            url.hostname.toLowerCase() !== "github.com"
+        ) {
+            return false;
+        }
+
+        const parts = url.pathname.split("/").filter(Boolean);
+
+        if (parts.length !== 2) {
+            return false;
+        }
+
+        const reserved = [
+            "settings", "login", "signup", "features",
+            "marketplace", "orgs", "topics", "collections",
+            "sponsors", "notifications", "search", "explore"
+        ];
+
+        if (reserved.includes(parts[0].toLowerCase())) {
+            return false;
+        }
+
+        return parts.every((part) =>
+            /^[a-zA-Z0-9_.-]+$/.test(part)
+        );
+
+    } catch {
+        return false;
+    }
+}
+
+/* CHANGE VISIBLE GITHUB LINK */
+
+function updateRepositoryLink(url) {
+    repositoryLink.href = url;
+    viewProjectButton.href = url;
+
+    const parsedURL = new URL(url);
+
+    repositoryLink.textContent =
+        parsedURL.hostname + parsedURL.pathname.replace(/\/$/, "");
+}
+
+/* SUBMIT NEW LINK */
+
+repositoryForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const enteredURL = repositoryInput.value.trim();
+
+    if (!isValidGitHubRepository(enteredURL)) {
+        linkMessage.textContent =
+            "Enter a valid GitHub repository URL, such as https://github.com/username/repository";
+
+        linkMessage.style.color = "#c24141";
+        return;
+    }
+
+    const cleanURL = new URL(enteredURL);
+
+    cleanURL.search = "";
+    cleanURL.hash = "";
+
+    const finalURL = cleanURL.href.replace(/\/$/, "");
+
+    updateRepositoryLink(finalURL);
+
+    try {
+        localStorage.setItem("portfolioRepositoryURL", finalURL);
+
+        linkMessage.textContent =
+            "Repository link updated and saved in this browser.";
+
+        linkMessage.style.color = "#29966b";
+
+    } catch {
+        linkMessage.textContent =
+            "Link updated for this session, but browser storage is unavailable.";
+
+        linkMessage.style.color = "#a16b12";
+    }
+});
+
+/* RESET ORIGINAL LINK */
+
+resetLinkButton.addEventListener("click", () => {
+    updateRepositoryLink(defaultRepository);
+
+    repositoryInput.value = "";
+    linkMessage.textContent = "";
+
+    try {
+        localStorage.removeItem("portfolioRepositoryURL");
+    } catch {
+        // Default URL remains available for this session.
+    }
+});
+
+/* LOAD SAVED URL */
+
+try {
+    const savedURL = localStorage.getItem("portfolioRepositoryURL");
+
+    if (savedURL && isValidGitHubRepository(savedURL)) {
+        updateRepositoryLink(savedURL);
+    }
+} catch {
+    // Keep the default repository URL.
+}
+
+/* FOOTER YEAR */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+/* SHOW HOME INITIALLY */
+
+showPage("home");
+</script>
+
+</body>
+</html>
